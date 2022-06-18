@@ -241,17 +241,16 @@ def onmessage(update,bot:ObigramClient):
         tl_admin_user = os.environ.get('tl_admin_user')
 
         #set in debug
-        tl_admin_user = 'Eljaguar12'
-
+        tl_admin_user = 'Odracirr'
         jdb = JsonDatabase('database')
         jdb.check_create()
         jdb.load()
 
         user_info = jdb.get_user(username)
 
-        if username == tl_admin_user or user_info :  # validate user
+        if username == tl_admin_user  or user_info :  # validate user
             if user_info is None:
-                if username == tl_admin_user:
+                if username == tl_admin_user or :
                     jdb.create_admin(username)
                 else:
                     jdb.create_user(username)
@@ -561,7 +560,7 @@ def main():
     bot_token = os.environ.get('bot_token')
 
     #set in debug
-    bot_token = '5291251553:AAHCgIV79MuWYu4t7MLsmlpj6iUDSp_ae24'
+    bot_token = '5457741890:AAEXGc4e3p9MIByKAxZhxOWoOglfl6spv1E'
 
     bot = ObigramClient(bot_token)
     bot.onMessage(onmessage)
